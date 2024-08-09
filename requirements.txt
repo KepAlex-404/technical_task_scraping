@@ -1,7 +1,9 @@
 beautifulsoup4~=4.12.3
 soupsieve~=2.4.1
 certifi~=2024.7.4
-pip~=10.0.1
 idna~=3.7
 urllib3~=1.26.6
 setuptools~=39.0.1
+bs4~=0.0.2
+selenium~=4.23.1
+python-dotenv~=1.0.1

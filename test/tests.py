@@ -23,17 +23,23 @@ class TestGitHubCrawler(unittest.TestCase):
     def test_parse_html(self):
         with open('test.html', 'r', encoding='utf-8') as f:
             html = f.read()
-        expected_result = ['https://github.com/openstack/nova',
-                         'https://github.com/int32bit/openstack-workflow',
-                         'https://github.com/openstack/python-novaclient',
-                         'https://github.com/crowbar/barclamp-nova',
-                         'https://github.com/crowbar/barclamp-nova_dashboard',
-                         'https://github.com/docker-archive/openstack-docker',
-                         'https://github.com/ruby-openstack/ruby-openstack',
-                         'https://github.com/openstack/puppet-nova',
-                         'https://github.com/fog/fog-openstack',
-                         'https://github.com/rcbops-cookbooks/nova']
-        self.assertEqual(self.crawler.parse_html(html), expected_result)
+
+        expected_result = [
+            'https://github.com/openstack/nova',
+            'https://github.com/int32bit/openstack-workflow',
+            'https://github.com/openstack/python-novaclient',
+            'https://github.com/crowbar/barclamp-nova',
+            'https://github.com/crowbar/barclamp-nova_dashboard',
+            'https://github.com/docker-archive/openstack-docker',
+            'https://github.com/ruby-openstack/ruby-openstack',
+            'https://github.com/openstack/puppet-nova',
+            'https://github.com/fog/fog-openstack',
+            'https://github.com/rcbops-cookbooks/nova'
+        ]
+
+        result = list(self.crawler.parse_html(html))
+
+        self.assertEqual(result, expected_result)
 
 
 if __name__ == "__main__":
