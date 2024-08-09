@@ -21,7 +21,7 @@ class TestGitHubCrawler(unittest.TestCase):
             GitHubCrawler(self.keywords, self.proxies, 'abrakadabra_type', self.driver_path)
 
     def test_parse_html(self):
-        with open('test.html', 'r', encoding='utf-8') as f:
+        with open('tests/test.html', 'r', encoding='utf-8') as f:
             html = f.read()
 
         expected_result = [
